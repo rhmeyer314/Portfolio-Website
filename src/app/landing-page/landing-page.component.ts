@@ -25,16 +25,28 @@ export class LandingPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    $(window).on('resize', function() {
-      var win = $(this);
+    $(window).on('resize', () => {
+      this.wasClicked = this.wasClicked;
+      var win = $(window);
       if (win.width() <= 768) {
         $("#wrapper").removeClass('menuDisplayed');
+        this.wasClicked = false;
+        console.log(this.wasClicked);
       }
     })
+
+    // $(window).on('resize', () => {  
+    //   var win = $(window);
+    //   if (win.width < 768) {
+    //     $('#wrapper').removeClass('menuDisplayed');
+    //     this.wasClicked = false;
+    //   }
+    // });
   }
 
   onClick(): void {
     this.wasClicked = !this.wasClicked;
+    console.log(this.wasClicked)
   }
 
 
