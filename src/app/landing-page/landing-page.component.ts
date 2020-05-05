@@ -19,17 +19,22 @@ export class LandingPageComponent implements OnInit {
   faUser = faUser;
   faFile = faFile;
   faEnvelope = faEnvelope;
+  wasClicked = false;
 
 
   constructor() { }
 
   ngOnInit(): void {
-    $(document).ready(function() {
-      $("#menu-toggle").click( function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("menuDisplayed");
-      });
+    $(window).on('resize', function() {
+      var win = $(this);
+      if (win.width() <= 768) {
+        $("#wrapper").removeClass('menuDisplayed');
+      }
     })
+  }
+
+  onClick(): void {
+    this.wasClicked = !this.wasClicked;
   }
 
 
