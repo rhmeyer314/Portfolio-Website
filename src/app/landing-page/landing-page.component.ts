@@ -34,14 +34,6 @@ export class LandingPageComponent implements OnInit {
         console.log(this.wasClicked);
       }
     })
-
-    // $(window).on('resize', () => {  
-    //   var win = $(window);
-    //   if (win.width < 768) {
-    //     $('#wrapper').removeClass('menuDisplayed');
-    //     this.wasClicked = false;
-    //   }
-    // });
   }
 
   onClick(): void {
