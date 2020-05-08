@@ -28,7 +28,7 @@ export class LandingPageComponent implements OnInit {
     $(window).on('resize', () => {
       this.wasClicked = this.wasClicked;
       var win = $(window);
-      if (win.width() <= 768) {
+      if (win.width() <= 767) {
         $("#wrapper").removeClass('menuDisplayed');
         this.wasClicked = false;
         console.log(this.wasClicked);
@@ -40,6 +40,4 @@ export class LandingPageComponent implements OnInit {
     this.wasClicked = !this.wasClicked;
     console.log(this.wasClicked)
   }
-
-
 }
