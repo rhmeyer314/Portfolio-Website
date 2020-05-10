@@ -8,6 +8,13 @@
  }
 
 
+ #wrapper {
+    color: white;
+    background-color: black;
+    transition: background-color 1s ease;
+ }
+
+
 #sidebar-wrapper {
     z-index: 1;
     position: absolute;
@@ -52,7 +59,6 @@
     width: 100%;
     position: absolute;
     transition: all .2s;
-    background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -129,6 +135,30 @@ section {
     height: 700px;
     -webkit-transition: background-color 1000ms linear; 
 }
+
+/* Color change */
+
+.color-black {
+    background-color: black !important;
+}
+
+.color-blue {
+    background-color: rgb(0, 0, 80) !important;
+}
+
+.color-red {
+    background-color: rgb(70, 0, 0) !important;
+}
+
+.color-grey {
+    background-color:rgb(51, 51, 51) !important;
+}
+
+.color-green {
+    background-color: #002E0B  !important;
+}
+
+/* Home */
 
 #home #home-layout {
     color: white;
