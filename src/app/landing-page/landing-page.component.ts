@@ -5,6 +5,8 @@ import { faTh } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import * as $ from 'jquery';
 
 @Component({
@@ -19,18 +21,27 @@ export class LandingPageComponent implements OnInit {
   faUser = faUser;
   faFile = faFile;
   faEnvelope = faEnvelope;
+  faGithub = faGithub;
+  faLinkedin = faLinkedin;
+  wasClicked = false;
 
 
   constructor() { }
 
   ngOnInit(): void {
-    $(document).ready(function() {
-      $("#menu-toggle").click( function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("menuDisplayed");
-      });
+    $(window).on('resize', () => {
+      this.wasClicked = this.wasClicked;
+      var win = $(window);
+      if (win.width() <= 767) {
+        $("#wrapper").removeClass('menuDisplayed');
+        this.wasClicked = false;
+        console.log(this.wasClicked);
+      }
     })
   }
 
-
+  onClick(): void {
+    this.wasClicked = !this.wasClicked;
+    console.log(this.wasClicked)
+  }
 }

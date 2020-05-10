@@ -1,12 +1,12 @@
-<div id="wrapper">
+<div id="wrapper" [class.menuDisplayed]="wasClicked">
 
     <div id="sidebar-wrapper">
         <div id=logo>
             <h2>Robert Meyer</h2>
-            <p>Full Stack Developer</p>
+            <p>Software Developer</p>
         </div>
         <ul class="sidebar-nav">
-            <li><a href="#home"><fa-icon [icon]="faHome"></fa-icon>Home</a></li>
+            <li id="top-item"><a href="#home"><fa-icon [icon]="faHome"></fa-icon>Home</a></li>
             <li><a href="#about"><fa-icon [icon]="faUser"></fa-icon>About Me</a></li>
             <li><a href="#projects"><fa-icon [icon]="faTh"></fa-icon>Projects</a></li>
             <li><a href="#resume"><fa-icon [icon]="faFile"></fa-icon>Resume</a></li>
@@ -18,90 +18,38 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-12">
                     <section id="home">
-                        <a href="#" class="btn btn-success" id="menu-toggle"><fa-icon [icon]="faBars"></fa-icon></a>
-                        <h1>Home</h1>
+                        <span id="menu-toggle" (click)="onClick()"><fa-icon id="bars" [icon]="faBars"></fa-icon></span>
+                        <div id="home-layout">
+                            <img id="headshot" src="/assets/headshot.jpg" alt="WHY">
+                            <h1>Robert Meyer</h1>
+                            <p>Software Developer</p>
+                            <div id="info">
+                                <div id="home-social">
+                                    <a href="https://github.com/rhmeyer314"><fa-icon [icon]="faGithub"></fa-icon></a>
+                                    <a href="https://www.linkedin.com/in/rhmeyer314/"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                                </div>
+                                <a href="#about" id="learn-more" class="btn btn-outline-white btn-lg">Learn More</a>
+                            </div>
+                            
+                        </div>
                     </section>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
                     <section id="about">
                         <h1>About Me</h1>
+                        <h1>.</h1>
                     </section>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
                     <section id="projects">
                         <h1>Projects</h1>
                     </section>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
                     <section id="resume">
                         <h1>Resume</h1>
                     </section>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
                     <section id="contact">
                         <h1>Contact</h1>
                     </section>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
-                    <h1>.</h1>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- <div class="sidebar">
-    <header>My Site</header>
-    <ul>
-        <li><a href="#"><fa-icon [icon]="faHome"></fa-icon>Home</a></li>
-        <li><a href="#"><fa-icon [icon]="faUser"></fa-icon>About Me</a></li>
-        <li><a href="#"><fa-icon [icon]="faTh"></fa-icon>Projects</a></li>
-        <li><a href="#"><fa-icon [icon]="faFile"></fa-icon>Resume</a></li>
-        <li><a href="#"><fa-icon [icon]="faEnvelope"></fa-icon>Contact</a></li>
-    </ul>
-</div>
-
-<div class="main">
-    <h1>Test</h1>
-</div> -->
