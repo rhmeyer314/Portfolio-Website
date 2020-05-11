@@ -10,7 +10,7 @@
 
  #wrapper {
     color: white;
-    background-color: black;
+    background-color: rgb(34, 34, 34);
     transition: background-color 1s ease;
  }
 
@@ -128,22 +128,14 @@
     cursor: pointer;
 }
 
-/* Main Content */
-
-section {
-    width: 100%;
-    height: 700px;
-    -webkit-transition: background-color 1000ms linear; 
-}
-
 /* Color change */
 
 .color-black {
-    background-color: black !important;
+    background-color: rgb(34, 34, 34) !important;
 }
 
 .color-blue {
-    background-color: rgb(0, 0, 80) !important;
+    background-color: #2F8FED !important;
 }
 
 .color-red {
@@ -151,15 +143,23 @@ section {
 }
 
 .color-grey {
-    background-color:rgb(51, 51, 51) !important;
+    background-color: #525659 !important;
 }
 
 .color-green {
     background-color: #002E0B  !important;
 }
 
+section {
+    border-bottom: 1px solid white;
+}
+
 /* Home */
 
+#home {
+    width: 100%;
+    height: 700px
+}
 #home #home-layout {
     color: white;
     text-align: center; 
@@ -175,11 +175,6 @@ section {
     font-family: 'Open Sans', sans-serif;
     font-size: 25px;
 }
-
-#about {
-    scroll-behavior: smooth;
-}
-
 
 .container-fluid{
     padding-left: 0rem;
@@ -247,4 +242,56 @@ section {
   .btn-outline-white:not(:disabled):not(.disabled):active:focus, .btn-outline-white:not(:disabled):not(.disabled).active:focus,
   .show > .btn-outline-white.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+
+  #about {
+      width: 100%;
+      height: 420px;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      overflow: hidden;
+  }
+  #about h1 {
+      padding-top: 100px;
+      font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  #about p {
+    display: inline-block;
+    text-align: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+  }
+
+  /* Project */
+
+  .item {
+    box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+    .item header {
+        background: #fff;
+        margin: 0;
+        padding: 1em 0 1em 0;
+        font-size: 0.8em;
+    }
+
+        .item header h3 {
+            font-size: 1em;
+        }
+
+  /* Resume */
+
+  #resume h1{
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  #resume object {
+      width: 100%;
+      height: 1150px;
+      display: block;
+      margin: auto;
   }
