@@ -23,7 +23,7 @@
                         <span id="menu-toggle" (click)="onClick()"><fa-icon id="bars" [icon]="faBars"></fa-icon></span>
                         <div id="home-layout">
                             <img id="headshot" src="/assets/headshot.jpg" alt="WHY">
-                            <h1>Robert Meyer</h1>
+                            <h1 class="section-header">Robert Meyer</h1>
                             <p>Software Developer</p>
                             <div id="info">
                                 <div id="home-social">
@@ -37,7 +37,7 @@
                     </section>
                     <section id="about" class="panel" data-color="blue">
                         <div class="container">
-                            <h1>About Me</h1>
+                            <h1 class="section-header">About Me</h1>
                             <p>I am an aspiring Software Developer who recently graduated with a B.S. in Computer Science at the University of North Carolina at Greensboro.
                                 I have been programming for 3 years, with skills in programming languages such as Java, Python, JavaScript, and many more. During my time as a
                                 student, I worked as a Computer Science Tutor and Lab Assistant. I assisted in helping students have a better understanding of the Java programming
@@ -45,25 +45,30 @@
                             </p>
                         </div>
                     </section>
-                    <section id="projects" class="panel" data-color="red">
-                        <h1>Projects</h1>
-                        <div class="container">
+                    <section id="projects" class="panel" data-color="orange">
+                        <h1 class="section-header">Projects</h1>
+                        <div class="container proj-container">
                             <div class="row">
-                                <div class="col-4 col-12-mobile">
-                                    <article class="item">
-                                        <a href="#"><img src="/assets/nasa-Q1p7bh3SHj8-unsplash.jpg"></a>
-                                    </article>
-                                </div>
+                              <div class="col-sm grid-item" *ngFor="let project of projectsArray">
+                                  <div class="card">
+                                      <img src={{project.imageURL}} class="card-img-top">
+                                      <div class="card-body">
+                                        <h4 class="card-title">{{project.title}}</h4>
+                                        <h6>{{project.type}}</h6>
+                                        <p class="card-text">{{project.description}}</p>
+                                        <a href={{project.projectURL}} class="btn btn-primary">Learn More</a>
+                                      </div>
+                                  </div>
+                              </div>
                             </div>
-
-                        </div>
+                          </div>
                     </section>
                     <section id="resume" class="panel" data-color="grey">
-                        <h1>Resume</h1>
+                        <h1 class="section-header">Resume</h1>
                         <object data="/assets/Robert_Meyer_Resume.pdf"></object>
                     </section>
                     <section id="contact" class="panel" data-color="green">
-                        <h1>Contact</h1>
+                        <h1 class="section-header">Contact</h1>
                         <form>
                             <input type="text" name="name" placeholder="Name">
                             <input type="text" name="email" placeholder="Email">
