@@ -138,8 +138,8 @@
     background-color: #2F8FED !important;
 }
 
-.color-red {
-    background-color: rgb(70, 0, 0) !important;
+.color-orange {
+    background-color: #27ae60 !important;
 }
 
 .color-grey {
@@ -154,11 +154,19 @@ section {
     border-bottom: 1px solid white;
 }
 
+.section-header {
+    padding-bottom: 20px;
+    padding-top: 100px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 60px;
+}
+
 /* Home */
 
 #home {
     width: 100%;
-    height: 700px
+    height: 100vh
 }
 #home #home-layout {
     color: white;
@@ -182,7 +190,7 @@ section {
     overflow: hidden;
   }
 
-  img {
+  #headshot {
     border-radius: 50%;
     padding-top: 10px;
   }
@@ -251,10 +259,6 @@ section {
       font-family: 'Open Sans', sans-serif;
       overflow: hidden;
   }
-  #about h1 {
-      padding-top: 100px;
-      font-family: 'Source Sans Pro', sans-serif;
-  }
 
   #about p {
     display: inline-block;
@@ -264,30 +268,29 @@ section {
   }
 
   /* Project */
+  #projects h1 {
+    text-align: center;
+    padding-bottom: 50px;
+  }
 
-  .item {
-    box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
-    margin-bottom: 40px;
-}
+  .proj-container {
+      text-align: center;
+      color: black;
+  }
 
-    .item header {
-        background: #fff;
-        margin: 0;
-        padding: 1em 0 1em 0;
-        font-size: 0.8em;
-    }
+  .grid-item {
+      padding-bottom: 20px;
+  }
 
-        .item header h3 {
-            font-size: 1em;
-        }
+  #emuLadderbg {
+      background-image: url("/assets/emuLadderBackground.png");
+      background-repeat: no-repeat;
+      background-size: 380px 380px;
+      
+  }
 
   /* Resume */
 
-  #resume h1{
-      text-align: center;
-      padding-top: 20px;
-      padding-bottom: 20px;
-  }
 
   #resume object {
       width: 900px;
