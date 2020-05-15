@@ -8,7 +8,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import * as $ from 'jquery';
-import { Projects } from "../model/projects"
+import { Projects } from "../model/projects";
+import { EmailService } from '../service/email.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -26,9 +27,12 @@ export class LandingPageComponent implements OnInit {
   faLinkedin = faLinkedin;
   wasClicked = false;
   projectsArray: Array<Projects>
+  name: string;
+  subject: string;
+  message: string;
 
 
-  constructor() { }
+  constructor(private emailService: EmailService) { }
 
   ngOnInit(): void {
 
@@ -106,5 +110,9 @@ export class LandingPageComponent implements OnInit {
     projectsArray.push(projects);
 
     return projectsArray;
+  }
+
+  createEmail(): void {
+    let promise = this.emailService.sendEmail(this.name, this.subject, this.message);
   }
 }
