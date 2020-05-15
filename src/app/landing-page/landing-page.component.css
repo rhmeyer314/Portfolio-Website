@@ -150,9 +150,6 @@
     background-color: #002E0B  !important;
 }
 
-section {
-    border-bottom: 1px solid white;
-}
 
 .section-header {
     padding-bottom: 20px;
@@ -254,7 +251,6 @@ section {
 
   #about {
       width: 100%;
-      height: 420px;
       text-align: center;
       font-family: 'Open Sans', sans-serif;
       overflow: hidden;
