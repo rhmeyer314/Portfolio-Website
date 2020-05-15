@@ -69,11 +69,10 @@
                     </section>
                     <section id="contact" class="panel" data-color="green">
                         <h1 class="section-header">Contact</h1>
-                        <form>
-                            <input type="text" name="name" placeholder="Name">
-                            <input type="text" name="email" placeholder="Email">
-                            <textarea name="message" placeholder="message"></textarea>
-                        </form>
+                        <input type="text" name="name" placeholder="Name" [(ngModel)]="name">
+                        <input type="text" name="email" placeholder="Email" [(ngModel)]="subject">
+                        <textarea name="message" placeholder="message" [(ngModel)]="message"></textarea>
+                        <button id="submit" type="submit" (click)="createEmail()">Send</button>
                     </section>
                 </div>
             </div>
