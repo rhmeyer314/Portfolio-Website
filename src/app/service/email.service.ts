@@ -10,8 +10,8 @@ export class EmailService {
 
   constructor(private rest: RestService) { }
 
-  public sendEmail(name: string, subject: string, message: string): Promise<Email>{
-    let requestData = this.createRequestData(name, subject, message);
+  public sendEmail(email: string, subject: string, message: string): Promise<Email>{
+    let requestData = this.createRequestData(email, subject, message);
 
     return this.post(requestData);
   }
@@ -22,9 +22,9 @@ export class EmailService {
     return promise.response;
   }
 
-  private createRequestData(name: string, subject: string, message: string) {
+  private createRequestData(email: string, subject: string, message: string) {
     return {
-      name: name,
+      email: email,
       subject: subject,
       message: message,
     }

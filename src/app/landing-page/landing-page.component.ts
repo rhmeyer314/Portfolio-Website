@@ -27,7 +27,7 @@ export class LandingPageComponent implements OnInit {
   faLinkedin = faLinkedin;
   wasClicked = false;
   projectsArray: Array<Projects>
-  name: string;
+  email: string;
   subject: string;
   message: string;
 
@@ -113,6 +113,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   createEmail(): void {
-    let promise = this.emailService.sendEmail(this.name, this.subject, this.message);
+    let promise = this.emailService.sendEmail(this.email, this.subject, this.message);
   }
 }
