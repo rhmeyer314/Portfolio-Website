@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit {
   faEnvelope = faEnvelope;
   faGithub = faGithub;
   faLinkedin = faLinkedin;
-  wasClicked = false;
+  wasClicked = true;
   projectsArray: Array<Projects>
   email: string;
   subject: string;
