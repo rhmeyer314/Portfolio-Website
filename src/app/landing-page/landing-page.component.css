@@ -138,16 +138,16 @@
     background-color: #2F8FED !important;
 }
 
-.color-orange {
-    background-color: #27ae60 !important;
+.color-darkblue {
+    background-color: #3e3e51 !important;
 }
 
 .color-grey {
     background-color: #525659 !important;
 }
 
-.color-green {
-    background-color: #002E0B  !important;
+.color-red {
+    background-color: #C83327   !important;
 }
 
 
@@ -294,3 +294,26 @@
       display: block;
       margin: auto;
   }
+
+  /* Contact */
+
+  #contact-other {
+      padding-bottom: 50px;
+  }
+  #other-header {
+      text-align: center;
+  }
+
+  .phone-email {
+      text-align: center;
+  }
+
+.phone-email h3 {
+    display: inline;
+    font-size: 24px;
+}
+
+.phone-email h4 {
+    display: inline;
+    font-size: 20px;
+}
