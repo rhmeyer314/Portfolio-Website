@@ -6,11 +6,21 @@
             <p>Software Developer</p>
         </div>
         <ul class="sidebar-nav">
-            <li id="top-item"><a href="#home"><fa-icon [icon]="faHome"></fa-icon>Home</a></li>
-            <li><a href="#about"><fa-icon [icon]="faUser"></fa-icon>About Me</a></li>
-            <li><a href="#projects"><fa-icon [icon]="faTh"></fa-icon>Projects</a></li>
-            <li><a href="#resume"><fa-icon [icon]="faFile"></fa-icon>Resume</a></li>
-            <li><a href="#contact"><fa-icon [icon]="faEnvelope"></fa-icon>Contact</a></li>
+            <li id="top-item"><a href="#home">
+                    <fa-icon [icon]="faHome"></fa-icon>Home
+                </a></li>
+            <li><a href="#about">
+                    <fa-icon [icon]="faUser"></fa-icon>About Me
+                </a></li>
+            <li><a href="#projects">
+                    <fa-icon [icon]="faTh"></fa-icon>Projects
+                </a></li>
+            <li><a href="#resume">
+                    <fa-icon [icon]="faFile"></fa-icon>Resume
+                </a></li>
+            <li><a href="#contact">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>Contact
+                </a></li>
 
         </ul>
     </div>
@@ -20,71 +30,112 @@
             <div class="row">
                 <div class="col-md-12">
                     <section id="home" class="panel" data-color="black">
-                        <span id="menu-toggle" (click)="onClick()"><fa-icon id="bars" [icon]="faBars"></fa-icon></span>
+                        <span id="menu-toggle" (click)="onClick()">
+                            <fa-icon id="bars" [icon]="faBars"></fa-icon>
+                        </span>
                         <div id="home-layout">
                             <img id="headshot" src="/assets/headshot.jpg" alt="WHY">
                             <h1 class="section-header">Robert Meyer</h1>
                             <p>Software Developer</p>
                             <div id="info">
                                 <div id="home-social">
-                                    <a href="https://github.com/rhmeyer314"><fa-icon [icon]="faGithub"></fa-icon></a>
-                                    <a href="https://www.linkedin.com/in/rhmeyer314/"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                                    <a href="https://github.com/rhmeyer314">
+                                        <fa-icon [icon]="faGithub"></fa-icon>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/rhmeyer314/">
+                                        <fa-icon [icon]="faLinkedin"></fa-icon>
+                                    </a>
                                 </div>
                                 <a href="#about" id="learn-more" class="btn btn-outline-white btn-lg">Learn More</a>
                             </div>
-                            
+
                         </div>
                     </section>
                     <section id="about" class="panel" data-color="blue">
                         <div class="container">
                             <h1 class="section-header">About Me</h1>
-                            <p>I am an aspiring Software Developer who recently graduated with a B.S. in Computer Science at the University of North Carolina at Greensboro.
-                                I have been programming for 3 years, with skills in programming languages such as Java, Python, JavaScript, and many more. During my time as a
-                                student, I worked as a Computer Science Tutor and Lab Assistant. I assisted in helping students have a better understanding of the Java programming
-                                language and any computer science concept from any course. I have a strong passion for anything related to programming, and I love learning new things!
+                            <p>I am an aspiring Software Developer who recently graduated with a B.S. in Computer
+                                Science at the University of North Carolina at Greensboro. I am currently seeking a full-time 
+                                position related to Software Development/Computer Science.
+                                I have been programming for 3 years, with strong skills in programming languages such as Java,
+                                Python, JavaScript, and many more. During my time as a
+                                student, I worked as a Computer Science Tutor and Lab Assistant. I assisted in helping
+                                students have a better understanding of the Java programming
+                                language and any computer science concept from any course. I have a strong passion for
+                                anything related to programming, and I love learning new things!
                             </p>
+                            <h5>Programming skills</h5>
+                            <p>Languages: Java, Python, SQL, JavaScript, TypeScript, HTML, CSS <br>
+                                Technologies: Spring Boot, Django, Angular, REST APIs, Linux, Git/GitHub, Maven
+                            </p>
+                            
+
                         </div>
                     </section>
                     <section id="projects" class="panel" data-color="darkblue">
                         <h1 class="section-header">Projects</h1>
                         <div class="container proj-container">
                             <div class="row">
-                              <div class="col-sm grid-item" *ngFor="let project of projectsArray">
-                                  <div class="card">
-                                      <img src={{project.imageURL}} class="card-img-top">
-                                      <div class="card-body">
-                                        <h4 class="card-title">{{project.title}}</h4>
-                                        <h6>{{project.type}}</h6>
-                                        <p class="card-text">{{project.description}}</p>
-                                        <a href={{project.projectURL}} class="btn btn-primary">Learn More</a>
-                                      </div>
-                                  </div>
-                              </div>
+                                <div class="col-sm grid-item" *ngFor="let project of projectsArray">
+                                    <div class="card">
+                                        <img src={{project.imageURL}} class="card-img-top">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{project.title}}</h4>
+                                            <h6>{{project.type}}</h6>
+                                            <p class="card-text">{{project.description}}</p>
+                                            <a href={{project.projectURL}} class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </section>
                     <section id="resume" class="panel" data-color="grey">
                         <h1 class="section-header">Resume</h1>
-                        <object data="/assets/Robert_Meyer_Resume.pdf"></object>
+                        <object data="/assets/Robert_Meyer_Resume_2020.pdf"></object>
                     </section>
                     <section id="contact" class="panel" data-color="red">
                         <div class="container">
                             <h1 class="section-header">Contact</h1>
-                            <div class="form-row contact-row">
-                                <div class="form-group col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Email (Gmail Preferred)" [(ngModel)]="email">
+                            <form [formGroup]="form">
+                                <div class="form-row contact-row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" placeholder="Email (Gmail Preferred)"
+                                            formControlName="email" required>
+                                        <div
+                                            *ngIf="form.get('email').hasError('required') && form.get('email').touched">
+                                            <div class="contact-error">Email is required</div>
+                                        </div>
+                                        <div *ngIf="form.get('email').hasError('email') && form.get('email').touched">
+                                            <div class="contact-error">Valid email required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" placeholder="subject"
+                                            formControlName="subject" required>
+                                        <div
+                                            *ngIf="form.get('subject').hasError('required') && form.get('subject').touched">
+                                            <div class="contact-error">Subject Required</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <input type="text" name="subject" class="form-control" placeholder="subject" [(ngModel)]="subject">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Message" rows="7"
+                                        formControlName="message" required></textarea>
+                                    <div
+                                        *ngIf="form.get('message').hasError('required') && form.get('message').touched">
+                                        <div class="contact-error">Message Required</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" class="form-control" placeholder="Message" rows="7" [(ngModel)]="message"></textarea>
-                            </div>
-                            <div class="text-right">
-                                <button id="submit" class="btn btn-primary" type="submit" (click)="createEmail()">Send Message</button>
-                            </div>
-                            
+                                <div class="form-group">
+                                    <div class="text-right">
+                                        <button id="submit" class="btn btn-primary" type="submit" data-toggle="modal"
+                                            data-target="#exampleModal" [disabled]="form.invalid"
+                                            (click)="createEmail()">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+
 
                             <div id="contact-other">
                                 <h1 id="other-header">Other Contact Methods</h1>
@@ -96,7 +147,29 @@
                                     <h3>Email: </h3>
                                     <h4>rhmeyer314@gmail.com</h4>
                                 </div>
-                                
+                            </div>
+                        </div>
+                        <div id="modals">
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Thank you for messaging me!
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            We will be in contact soon. I am looking forward speaking with you!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>

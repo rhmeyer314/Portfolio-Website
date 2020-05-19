@@ -10,6 +10,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import * as $ from 'jquery';
 import { Projects } from "../model/projects";
 import { EmailService } from '../service/email.service';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-landing-page',
@@ -25,16 +26,24 @@ export class LandingPageComponent implements OnInit {
   faEnvelope = faEnvelope;
   faGithub = faGithub;
   faLinkedin = faLinkedin;
-  wasClicked = false;
+  wasClicked = true;
   projectsArray: Array<Projects>
   email: string;
   subject: string;
   message: string;
 
+  form = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    subject: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
+  })
 
-  constructor(private emailService: EmailService) { }
+
+  constructor(private emailService: EmailService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+
 
     this.projectsArray = this.createProjects();
     console.log(this.projectsArray)
@@ -50,27 +59,27 @@ export class LandingPageComponent implements OnInit {
       }
     })
 
-    $(window).scroll(function() {
-  
+    $(window).scroll(function () {
+
       var $window = $(window),
-          $body = $('#wrapper'),
-          $panel = $('.panel');
-      
+        $body = $('#wrapper'),
+        $panel = $('.panel');
+
       var scroll = $window.scrollTop() + ($window.height() / 3);
-     
+
       $panel.each(function () {
         var $this = $(this);
-        
+
         if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-              
+
           $body.removeClass(function (index, css) {
-            return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+            return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
           });
-           
+
           $body.addClass('color-' + $(this).data('color'));
         }
-      });    
-      
+      });
+
     }).scroll();
   }
 
@@ -113,6 +122,9 @@ export class LandingPageComponent implements OnInit {
   }
 
   createEmail(): void {
-    let promise = this.emailService.sendEmail(this.email, this.subject, this.message);
+    let email = this.form.value.email;
+    let subject = this.form.value.subject;
+    let message = this.form.value.message;
+    let promise = this.emailService.sendEmail(email, subject, message);
   }
 }
