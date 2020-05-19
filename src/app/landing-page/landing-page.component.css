@@ -147,7 +147,7 @@
 }
 
 .color-red {
-    background-color: #C83327   !important;
+    background-color: black   !important;
 }
 
 
@@ -320,4 +320,8 @@
 
 #modals {
     color: black;
+}
+
+.contact-error {
+    color: red;
 }
